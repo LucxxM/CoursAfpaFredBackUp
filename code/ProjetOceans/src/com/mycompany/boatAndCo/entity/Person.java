@@ -1,4 +1,4 @@
-package com.mycompany.travail.etapes.entity;
+package com.mycompany.boatAndCo.entity;
 
 public class Person {
     // Propriétés

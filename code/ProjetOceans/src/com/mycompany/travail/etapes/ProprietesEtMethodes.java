@@ -1,8 +1,8 @@
-package com.mycompany.boatAndCo;
+package com.mycompany.travail.etapes;
 
-import com.sun.source.tree.ClassTree;
+import com.mycompany.travail.etapes.entity.Person;
 
-public class boatAndCoApplication {
+public class ProprietesEtMethodes {
     public static void main(String[] args) {
         Person clientdurand = new Person();
         Person clientDupont = new Person();

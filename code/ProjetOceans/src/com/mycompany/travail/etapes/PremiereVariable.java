@@ -16,7 +16,5 @@ public class PremiereVariable {
             int maVariable2 = 7;
 
         }
-
-
     }
 }
