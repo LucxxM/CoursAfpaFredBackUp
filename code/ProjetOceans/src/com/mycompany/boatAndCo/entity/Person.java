@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.mycompany.travail.etapes.entity;
+=======
+package com.mycompany.boatAndCo.entity;
+>>>>>>> develop
 
 public class Person {
     // Propriétés

@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 package com.mycompany.boatAndCo;
 
 import com.sun.source.tree.ClassTree;
 
 public class boatAndCoApplication {
+=======
+package com.mycompany.travail.etapes;
+
+import com.mycompany.travail.etapes.entity.Person;
+
+public class ProprietesEtMethodes {
+>>>>>>> develop
     public static void main(String[] args) {
         Person clientdurand = new Person();
         Person clientDupont = new Person();
