@@ -1,4 +1,4 @@
-package com.mycompany.etapes;
+package com.mycompany.travail.etapes;
 
 public class PremiereVariable {
     public class Main {
@@ -16,7 +16,5 @@ public class PremiereVariable {
             int maVariable2 = 7;
 
         }
-
-
     }
 }

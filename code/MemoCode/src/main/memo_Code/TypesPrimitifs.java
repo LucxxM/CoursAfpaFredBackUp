@@ -1,4 +1,4 @@
-package main;
+package main.memo_Code;
 
 public class TypesPrimitifs {
     public static void main(String[] args) {
