@@ -1,6 +1,6 @@
-package com.mycompany;
+package com.mycompany.travail.etapes;
 
-public class Main {
+public class structuresConditionnelles {
     public static void main(String[] args) {
         System.out.println("### Les variables");
         int nbEspecesEn2018 = 182854;
@@ -74,5 +74,8 @@ public class Main {
         }
         while (compteur != 0);
     }
+
+
+
 }
 

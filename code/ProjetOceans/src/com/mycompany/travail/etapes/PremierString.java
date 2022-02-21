@@ -1,4 +1,4 @@
-package com.mycompany.etapes;
+package com.mycompany.travail.etapes;
 
 public class PremierString {
     public static void main(String[] args) {
