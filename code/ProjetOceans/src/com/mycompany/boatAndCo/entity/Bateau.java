@@ -1,11 +1,11 @@
 package com.mycompany.boatAndCo.entity;
 
 public class Bateau {
-    String marque;
-    String couleur;
-    Moteur moteur;
+    public String marque;
+    public String couleur;
+    public Moteur moteur;
 
-    void naviguer(){
+    public void naviguer(){
         System.out.println("Je navigue");
     }
 

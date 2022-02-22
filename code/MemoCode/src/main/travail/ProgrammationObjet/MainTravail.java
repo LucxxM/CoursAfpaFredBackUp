@@ -1,13 +1,14 @@
-package main.memo_Code.ProgrammationObjet.entity;
+package main.travail.ProgrammationObjet;
 
 
-import main.memo_Code.ProgrammationObjet.entity.Voiture;
+import main.travail.ProgrammationObjet.entity.MoteurTravail;
+import main.travail.ProgrammationObjet.entity.VoitureTravail;
 
-public class Main {
+public class MainTravail {
     public static void main(String[] args) {
         // instanciation d'un objet
-        Voiture voitureDeMichel = new Voiture();
-        Voiture voitureDeThomas = new Voiture();
+        VoitureTravail voitureDeMichel = new VoitureTravail();
+        VoitureTravail voitureDeThomas = new VoitureTravail();
 
         // Valorisation des proprietes
         voitureDeMichel.immatriculation = "123AZE56";
@@ -64,7 +65,7 @@ public class Main {
         System.out.println(nouvelleVitesse);
 
 
-        Voiture voitureDeMartin = new Voiture();
+        VoitureTravail voitureDeMartin = new VoitureTravail();
         voitureDeMartin.marque = "Citroen";
         voitureDeMartin.immatriculation = "122ZZ62";
         voitureDeMartin.nbPortes = 4;
@@ -73,7 +74,7 @@ public class Main {
         String marqueDeLaVoitureDeMartin = voitureDeMartin.marque;
         int nbDePortesDeLaVoitureDeMartin = voitureDeMartin.nbPortes;
 
-        Moteur nouveauMoteur = new Moteur();
+        MoteurTravail nouveauMoteur = new MoteurTravail();
         nouveauMoteur.motorisation = "Diesel";
         nouveauMoteur.nbCylindres = 4;
 
@@ -93,7 +94,7 @@ public class Main {
 
         String[] tableauString = new String[5];
 
-        Voiture[] tableauDeVoitures = new Voiture[5];
+        VoitureTravail[] tableauDeVoitures = new VoitureTravail[5];
 
         tableauInt[0] = 9;
         System.out.println("Le premier élément du tableau de int est " + tableauInt[0]);
@@ -101,10 +102,10 @@ public class Main {
         tableauString[1] = "toto";
         System.out.println("Le deuxielme élément du tableau de String est  " + tableauString[1]);
 
-        Voiture newVoiture = new Voiture();
+        VoitureTravail newVoiture = new VoitureTravail();
         tableauDeVoitures[2] = newVoiture;
 
-        tableauDeVoitures[3] = new Voiture();
+        tableauDeVoitures[3] = new VoitureTravail();
 
         int tailleTableauInt = tableauString.length;
         System.out.println("La taille du tableau de int est : " + tailleTableauInt);

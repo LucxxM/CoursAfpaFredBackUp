@@ -1,11 +1,11 @@
 package com.mycompany.boatAndCo.entity;
 
 public class Moteur {
-    int NbCylindres = 4;
-    String anneeFabricationMoteur;
-    String carburation = "Diesel";
+    public int NbCylindres = 4;
+    public String anneeFabricationMoteur;
+    public String carburation = "Diesel";
 
-    void demarrer(){
+    public void demarrer(){
         System.out.println("Je démarre");
     }
 }

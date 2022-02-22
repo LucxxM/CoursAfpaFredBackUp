@@ -1,6 +1,10 @@
-package com.mycompany.boatAndCo.entity;
+package com.mycompany;
 
-public class boatAndCoApplication {
+import com.mycompany.boatAndCo.entity.Bateau;
+import com.mycompany.boatAndCo.entity.Moteur;
+import com.mycompany.boatAndCo.entity.Person;
+
+public class boatAndCoApplication_travail {
     public static void main(String[] args) {
         Person clientdurand = new Person();
         Person clientDupont = new Person();

@@ -1,6 +1,6 @@
-package main.memo_Code.ProgrammationObjet.entity;
+package main.travail.ProgrammationObjet.entity;
 
-public class Voiture {
+public class VoitureTravail {
     // Propriétés
     public String marque;
     public String immatriculation;
@@ -9,7 +9,7 @@ public class Voiture {
     public int vitesseCourante = 0;
     public int vitesse = 0;
 
-    public Moteur moteur;
+    public MoteurTravail moteur;
 
 
     // Méthodes (comportements)
@@ -83,4 +83,7 @@ public class Voiture {
         System.out.println("J'accelere de " + vitesse + " km/h");
         return this.vitesse + vitesse;
     }
+
+
+
 }

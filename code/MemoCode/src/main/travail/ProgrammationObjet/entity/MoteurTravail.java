@@ -1,6 +1,6 @@
-package main.memo_Code.ProgrammationObjet.entity;
+package main.travail.ProgrammationObjet.entity;
 
-public class Moteur {
+public class MoteurTravail {
     public int nbCylindres;
     public String motorisation;
 
