@@ -1,4 +1,4 @@
-package com.mycompany.travail.etapes.entity;
+package com.mycompany.travail.entity;
 
 public class Person_travail {
     // Propriétés

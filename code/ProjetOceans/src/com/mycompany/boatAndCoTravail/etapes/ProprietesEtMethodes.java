@@ -1,11 +1,11 @@
 package com.mycompany.travail.etapes;
 
-import com.mycompany.travail.etapes.entity.Person_travail;
+import com.mycompany.boatAndCoTravail.entity.Person;
 
-public class ProprietesEtMethodes_travail {
+public class ProprietesEtMethodes {
     public static void main(String[] args) {
-        Person_travail clientdurand = new Person_travail();
-        Person_travail clientDupont = new Person_travail();
+        Person clientdurand = new Person();
+        Person clientDupont = new Person();
 
         clientdurand.firstname = "David";
         clientdurand.lastname = "Durand";

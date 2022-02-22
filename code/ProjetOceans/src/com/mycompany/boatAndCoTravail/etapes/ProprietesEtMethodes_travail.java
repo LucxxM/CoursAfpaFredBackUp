@@ -1,8 +1,8 @@
 package com.mycompany.travail.etapes;
 
-import com.mycompany.travail.etapes.entity.Person_travail;
+import com.mycompany.boatAndCoTravail.entity.Person_travail;
 
-public class boatAndCoApplication_travail {
+public class ProprietesEtMethodes_travail {
     public static void main(String[] args) {
         Person_travail clientdurand = new Person_travail();
         Person_travail clientDupont = new Person_travail();
@@ -29,14 +29,8 @@ public class boatAndCoApplication_travail {
 
         // Avec plusieurs parametres
         int anneeAnciennete = clientdurand.calculerAnciennete(2007, true);
+
         System.out.println("Monsieur " + clientdurand.firstname + " " + clientdurand.lastname + " a " + anneeAnciennete + " ans d'anciennete" );
-
-        // Surcharge
-        clientdurand.sePresenter(true);
-
-
-
-
 
     }
 }
