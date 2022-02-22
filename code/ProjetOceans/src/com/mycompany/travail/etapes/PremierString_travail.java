@@ -1,6 +1,6 @@
-package com.mycompany.etapes;
+package com.mycompany.travail.etapes;
 
-public class PremierString {
+public class PremierString_travail {
     public static void main(String[] args) {
 
         int nbEspecesEn2018 = 182854;

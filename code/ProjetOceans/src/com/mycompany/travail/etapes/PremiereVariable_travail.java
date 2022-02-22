@@ -1,6 +1,6 @@
-package com.mycompany.etapes;
+package com.mycompany.travail.etapes;
 
-public class PremiereVariable {
+public class PremiereVariable_travail {
     public class Main {
         public static void main(String[] args) {
 
@@ -16,7 +16,5 @@ public class PremiereVariable {
             int maVariable2 = 7;
 
         }
-
-
     }
 }
