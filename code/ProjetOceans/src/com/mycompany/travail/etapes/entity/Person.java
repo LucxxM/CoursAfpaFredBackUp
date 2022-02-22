@@ -1,4 +1,4 @@
-package com.mycompany.boatAndCo.entity;
+package com.mycompany.travail.etapes.entity;
 
 public class Person {
     // Propriétés
@@ -17,12 +17,7 @@ public class Person {
 
     // Avec valeur de retour
     public int renvoyerAge(){
-<<<<<<< HEAD
-
-        return this.age;
-=======
         return age;
->>>>>>> main
     }
 
     // Avec un parametre
@@ -44,29 +39,4 @@ public class Person {
 
         // return 2022 - anneeArrivee;  // Syntaxe simplifiee
     }
-<<<<<<< HEAD
-
-    // Surcharge
-    public void sePresenter(boolean cotisAJour){
-        if (cotisAJour){
-            System.out.println("Mes cotisations sont à jour");
-        }
-        else {
-            System.out.println("Mes cotisations ne sont pas à jour");
-        }
-    }
-
-    public void sePresenter(String cotisAJour){
-
-        if (cotisAJour == "cotisAJour"){
-            System.out.println("Mes cotisations sont à jour");
-        }
-        else {
-            System.out.println("Mes cotisations ne sont pas à jour");
-        }
-    }
-
-
-=======
->>>>>>> main
 }
