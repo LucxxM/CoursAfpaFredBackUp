@@ -1,9 +1,18 @@
 package main.travail.ProgrammationObjet.entity;
 
-public class MoteurTravail {
+public class Moteur {
     public int nbCylindres;
     public String motorisation;
 
+// Constructeur
+
+    public Moteur(int nbCylindres, String motorisation) {
+        this.nbCylindres = nbCylindres;
+        this.motorisation = motorisation;
+    }
+
+    public Moteur(){
+        }
 
     // méthodes
     public void afficheMotorisation(){

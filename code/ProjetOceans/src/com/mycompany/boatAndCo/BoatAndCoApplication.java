@@ -1,10 +1,12 @@
 package com.mycompany.boatAndCo;
 
+
 import com.mycompany.boatAndCo.entity.Bateau;
 import com.mycompany.boatAndCo.entity.Moteur;
 import com.mycompany.boatAndCo.entity.Person;
+import com.mycompany.boatAndCo.entity.Port;
 
-public class boatAndCoApplication {
+public class BoatAndCoApplication {
     public static void main(String[] args) {
         Person clientdurand = new Person();
         Person clientDupont = new Person();
@@ -74,6 +76,26 @@ public class boatAndCoApplication {
         bateauDeMichel.moteur = moteur;
 
         System.out.println("Le moteur du bateau de Michel est du type : " +bateauDeMichel.moteur.carburation);
+
+        System.out.println();
+
+        // Exercice Surcharge
+        System.out.println("Exercice Surcharge");
+
+
+        System.out.println();
+
+        // Exercice Ocean : ArrayList
+
+        System.out.println("Exercice Ocean : ArrayList");
+        Port portDeCalais = new Port();
+
+        int nbEmplacements = 0;
+        Bateau[] emplacements = new Bateau[nbEmplacements];
+
+        portDeCalais.emplacements = emplacements;
+
+        bateauDeMichel.rentrerAuPort(portDeCalais);
     }
 }
 

@@ -1,4 +1,4 @@
-package com.mycompany.boatAndCo.entity;
+package com.mycompany.travail.boatAndCo.entity;
 
 public class Person {
     // Propriétés
@@ -7,6 +7,7 @@ public class Person {
     public int age;
     public int valeurParDefaut = 45;
     public String dateOfBirth;
+    public Adress adress;
 
     // Méthodes
 

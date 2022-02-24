@@ -1,4 +1,4 @@
-package main.travail.collections;
+package main.memo_Code.collections;
 
 import main.travail.ProgrammationObjet.entity.Voiture;
 
@@ -14,16 +14,25 @@ public class ArrayList {
         System.out.println("Le premier élément du tableau de int est " + tableauInt[0]);
 
         tableauString[1] = "toto";
-        System.out.println("Le deuxielme élément du tableau de String est  " + tableauString[1]);
+        System.out.println("Le deuxieme élément du tableau de String est  " + tableauString[1]);
 
-        Voiture newVoiture = new Voiture();     // En passant par une variable
+        Voiture newVoiture = new Voiture();
+        newVoiture.setMarque("Peugeot");
+
+        // En passant par une variable
         tableauDeVoitures[2] = newVoiture;
+        System.out.println("La marque de la voiture stockée à l'index 2 du tableau est " +tableauDeVoitures[2].getMarque());
 
         tableauDeVoitures[3] = new Voiture();   // Sans variable
 
         // Taille du tableau
         int tailleTableauInt = tableauString.length;
         System.out.println("La taille du tableau de int est : " + tailleTableauInt);
+
+        // Parcours du tableau
+        for (int index = 0; index < tableauInt.length; index++){
+            System.out.println("tableauDeInt[" + index + "] contient "+ tableauInt[index]);
+        }
 
     }
 }

@@ -4,6 +4,8 @@ package main.memo_Code.ProgrammationObjet;
 import main.memo_Code.ProgrammationObjet.entity.Moteur;
 import main.memo_Code.ProgrammationObjet.entity.Voiture;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         // instanciation d'un objet
@@ -109,11 +111,6 @@ public class Main {
 
         int tailleTableauInt = tableauString.length;
         System.out.println("La taille du tableau de int est : " + tailleTableauInt);
-
-
-
-
-
 
 
     }

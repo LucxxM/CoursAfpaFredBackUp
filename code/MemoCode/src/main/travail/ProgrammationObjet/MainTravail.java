@@ -1,24 +1,26 @@
 package main.travail.ProgrammationObjet;
 
+import main.travail.ProgrammationObjet.entity.Moteur;
+import main.travail.ProgrammationObjet.entity.Passager;
+import main.travail.ProgrammationObjet.entity.Ville;
+import main.travail.ProgrammationObjet.entity.Voiture;
 
-import main.travail.ProgrammationObjet.entity.MoteurTravail;
-import main.travail.ProgrammationObjet.entity.VoitureTravail;
 
 public class MainTravail {
     public static void main(String[] args) {
         // instanciation d'un objet
-        VoitureTravail voitureDeMichel = new VoitureTravail();
-        VoitureTravail voitureDeThomas = new VoitureTravail();
+        Voiture voitureDeMichel = new Voiture();
+        Voiture voitureDeThomas = new Voiture();
 
         // Valorisation des proprietes
-        voitureDeMichel.immatriculation = "123AZE56";
-        voitureDeMichel.marque = "Renaut";
-        System.out.println("Le nombre de porte de la voiture est " + voitureDeMichel.nbPortes);
+        voitureDeMichel.setImmatriculation("123AZE56");
+        voitureDeMichel.setMarque("Renaut");
+        System.out.println("Le nombre de porte de la voiture est " + voitureDeMichel.getNbPortes());
 
         // Modification de la valeur d'une propriété
-        voitureDeMichel.nbPortes = 5;
-        System.out.println("Le nombre de porte de la voiture est maintenant" + voitureDeMichel.nbPortes);
-        System.out.println("La voiture de Michel est de marque " + voitureDeMichel.marque + ", son immatriculation est " + voitureDeMichel.immatriculation + " et elle a " + voitureDeMichel.nbPortes + " portes");
+        voitureDeMichel.setNbPortes(5);
+        System.out.println("Le nombre de porte de la voiture est maintenant" + voitureDeMichel.getNbPortes());
+        System.out.println("La voiture de Michel est de marque " + voitureDeMichel.getMarque() + ", son immatriculation est " + voitureDeMichel.getImmatriculation() + " et elle a " + voitureDeMichel.getNbPortes() + " portes");
 
         // Appel d'une méthode sans retour (void) et sans paramétres
         voitureDeMichel.klaxonner();
@@ -58,6 +60,7 @@ public class MainTravail {
         voitureDeMichel.accelerer(40);
 
         System.out.println();
+
         // Mot cle this
         System.out.println("Utilisation de this");
 
@@ -65,56 +68,82 @@ public class MainTravail {
         System.out.println(nouvelleVitesse);
 
 
-        VoitureTravail voitureDeMartin = new VoitureTravail();
-        voitureDeMartin.marque = "Citroen";
-        voitureDeMartin.immatriculation = "122ZZ62";
-        voitureDeMartin.nbPortes = 4;
+        Voiture voitureDeMartin = new Voiture();
+        voitureDeMartin.setMarque("Citroen");
+        voitureDeMartin.setImmatriculation("122ZZ62");
+        voitureDeMartin.setNbPortes(4);
 
 
-        String marqueDeLaVoitureDeMartin = voitureDeMartin.marque;
-        int nbDePortesDeLaVoitureDeMartin = voitureDeMartin.nbPortes;
+        String marqueDeLaVoitureDeMartin = voitureDeMartin.getMarque();
+        int nbDePortesDeLaVoitureDeMartin = voitureDeMartin.getNbPortes();
 
-        MoteurTravail nouveauMoteur = new MoteurTravail();
+        Moteur nouveauMoteur = new Moteur();
         nouveauMoteur.motorisation = "Diesel";
         nouveauMoteur.nbCylindres = 4;
 
         nouveauMoteur.afficheMotorisation();
 
-        voitureDeMartin.moteur = nouveauMoteur;
+        voitureDeMartin.setMoteur(nouveauMoteur);
 
-        System.out.println("La motorisation du moteur de la voiture de Martin est " +voitureDeMartin.moteur.motorisation);
+        System.out.println("La motorisation du moteur de la voiture de Martin est " +voitureDeMartin.getMoteur().motorisation);
 
         System.out.println();
 
-        // ArrayList
 
-        System.out.println("ArrayList");
+        // méthodes avec des parametres de type Objet
 
-        int[] tableauInt =  new int[5];
+        Passager passagerDupont = new Passager();
+        passagerDupont.firstname = "David";
+        passagerDupont.lastname = "Dupont";
 
-        String[] tableauString = new String[5];
+        Ville villeDeDepart = new Ville();
+        villeDeDepart.nom = "Lille";
 
-        VoitureTravail[] tableauDeVoitures = new VoitureTravail[5];
-
-        tableauInt[0] = 9;
-        System.out.println("Le premier élément du tableau de int est " + tableauInt[0]);
-
-        tableauString[1] = "toto";
-        System.out.println("Le deuxielme élément du tableau de String est  " + tableauString[1]);
-
-        VoitureTravail newVoiture = new VoitureTravail();
-        tableauDeVoitures[2] = newVoiture;
-
-        tableauDeVoitures[3] = new VoitureTravail();
-
-        int tailleTableauInt = tableauString.length;
-        System.out.println("La taille du tableau de int est : " + tailleTableauInt);
+        Ville villeArrivee = voitureDeMichel.transporter(passagerDupont, villeDeDepart);
+        System.out.println("Le passager est arrivé à " + villeArrivee.nom);
 
 
 
+        // Propriétés statiques
+
+        System.out.println("Le nombre de roues d'une voiture en général est : " +Voiture.nbRoues);
+
+        System.out.println("La voiture de Michel a " +voitureDeMichel.nbRoues + " roues");
+        System.out.println("La voiture de Martin a " +voitureDeMartin.nbRoues + " roues");
+
+        Voiture.nbRoues = 6;
+        System.out.println("La voiture de Michel a " +voitureDeMichel.nbRoues + " roues");
+        System.out.println("La voiture de Martin a " +voitureDeMartin.nbRoues + " roues");
+
+        // Méthodes statiques
+        Voiture.klaxonner();
+        voitureDeMartin.klaxonner();
+
+        System.out.println("Ma nouvelle vitesse est : " + Voiture.donnerNouvelleVitesse(20));
+
+
+        System.out.println();
+        // Les constructeurs
+        Voiture voitureDeMarcel = new Voiture();
+
+        Voiture voitureJaune = new Voiture("jaune");
+        System.out.println("La couleur de la voiture est " + voitureJaune.getCouleur());
+        voitureJaune.setCouleur("verte");
+        System.out.println("La nouvelle couleur est " + voitureJaune.getCouleur());
+
+        // Constructeur avec un parametre objet
+        Moteur moteurRenaut = new Moteur();
+        moteurRenaut.nbCylindres = 8;
+        Voiture voitureRenaud = new Voiture(moteurRenaut);
+        System.out.println("La voiture a " + voitureRenaud.getMoteur().nbCylindres + " cylindres.");
+
+        // Constructeur avec Moteur
+        Voiture voitureAvecMoteur = new Voiture(4, "Essence");
+        System.out.println("La voiture voitureAvecMoteur a un moteur " + voitureAvecMoteur.getMoteur().motorisation + " et a " + voitureAvecMoteur.getMoteur().nbCylindres + " cylindres");
 
 
 
 
-    }
+
+}
 }

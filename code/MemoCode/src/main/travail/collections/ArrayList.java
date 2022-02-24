@@ -10,7 +10,7 @@ public class ArrayList {
         Voiture[] tableauDeVoitures = new Voiture[5];
 
         // Modification des valeurs
-        tableauInt[0] = 9;
+        tableauInt[0] = 9;  // Index 0 = 1ere case
         System.out.println("Le premier élément du tableau de int est " + tableauInt[0]);
 
         tableauString[1] = "toto";
@@ -25,5 +25,8 @@ public class ArrayList {
         int tailleTableauInt = tableauString.length;
         System.out.println("La taille du tableau de int est : " + tailleTableauInt);
 
+        for (int index = 0; index < tableauString.length; index++){
+            System.out.println("tableauString[" + index + "] contient " + tableauString[index]);
+        }
     }
 }
