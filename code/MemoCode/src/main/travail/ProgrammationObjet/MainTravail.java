@@ -1,10 +1,10 @@
 package main.travail.ProgrammationObjet;
 
+
 import main.travail.ProgrammationObjet.entity.Moteur;
 import main.travail.ProgrammationObjet.entity.Passager;
 import main.travail.ProgrammationObjet.entity.Ville;
 import main.travail.ProgrammationObjet.entity.Voiture;
-
 
 public class MainTravail {
     public static void main(String[] args) {
@@ -143,6 +143,7 @@ public class MainTravail {
 
 
 
+        Passager passagerDurand = new Passager();
 
 
 }

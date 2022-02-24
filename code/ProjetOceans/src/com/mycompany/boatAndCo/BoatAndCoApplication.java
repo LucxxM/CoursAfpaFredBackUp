@@ -1,10 +1,6 @@
 package com.mycompany.boatAndCo;
 
-
-import com.mycompany.boatAndCo.entity.Bateau;
-import com.mycompany.boatAndCo.entity.Moteur;
-import com.mycompany.boatAndCo.entity.Person;
-import com.mycompany.boatAndCo.entity.Port;
+import com.mycompany.boatAndCo.entity.*;
 
 public class BoatAndCoApplication {
     public static void main(String[] args) {
@@ -26,7 +22,7 @@ public class BoatAndCoApplication {
         // Avec une valeur de retour
         System.out.println("Avec une valeur de retour");
 
-        System.out.println("M.Durand a " +clientdurand.renvoyerAge());
+        System.out.println("M.Durand a " + clientdurand.renvoyerAge());
 
         System.out.println();
 
@@ -36,10 +32,10 @@ public class BoatAndCoApplication {
         System.out.println("M.Durand a " + clientdurand.age + " ans.");
         int nouvelAge = clientdurand.vieillir(45);
         System.out.println("Après l'appel de la méthode vieillir, l'age est = " + nouvelAge);
-        System.out.println("La propriété age a toujours la valeur :  " + clientdurand.age );
+        System.out.println("La propriété age a toujours la valeur :  " + clientdurand.age);
 
         clientdurand.age = clientdurand.vieillir(45);
-        System.out.println("age vaut maintenant : " +clientdurand.age);
+        System.out.println("age vaut maintenant : " + clientdurand.age);
 
         System.out.println();
 
@@ -48,7 +44,7 @@ public class BoatAndCoApplication {
 
         int anneeAnciennete = clientdurand.calculerAnciennete(2007, true);
 
-        System.out.println("Monsieur " + clientdurand.firstname + " " + clientdurand.lastname + " a " + anneeAnciennete + " ans d'anciennete" );
+        System.out.println("Monsieur " + clientdurand.firstname + " " + clientdurand.lastname + " a " + anneeAnciennete + " ans d'anciennete");
 
         System.out.println();
 
@@ -75,7 +71,7 @@ public class BoatAndCoApplication {
 
         bateauDeMichel.moteur = moteur;
 
-        System.out.println("Le moteur du bateau de Michel est du type : " +bateauDeMichel.moteur.carburation);
+        System.out.println("Le moteur du bateau de Michel est du type : " + bateauDeMichel.moteur.carburation);
 
         System.out.println();
 
@@ -89,13 +85,42 @@ public class BoatAndCoApplication {
 
         System.out.println("Exercice Ocean : ArrayList");
         Port portDeCalais = new Port();
+        portDeCalais.nom = "Calais";
+        portDeCalais.nbEmplacements = 4;
 
-        int nbEmplacements = 0;
-        Bateau[] emplacements = new Bateau[nbEmplacements];
+        int nbEmplacements = 5;
 
-        portDeCalais.emplacements = emplacements;
+        portDeCalais.emplacements = new Bateau[nbEmplacements];
 
         bateauDeMichel.rentrerAuPort(portDeCalais);
-    }
-}
 
+        Port monPort = new Port();
+
+        System.out.println();
+        // Proprietes statiques
+        System.out.println("Proprietes statiques");
+
+        System.out.println("Grace à la propriété statique, tous les bateaux instanciés ont un moteur " + Moteur.carburation);
+
+        System.out.println();
+        // Exercice Ocean
+        System.out.println("exercice Ocean");
+
+        // int distanceParcourue = Bateau.calculerDistanceParcourue(3,45);
+
+        System.out.println("Nous avons parcouru " + Bateau.calculerDistanceParcourue(3, 45) +
+                " kms grace au moteur " + Moteur.carburation + " du bateau");
+
+        System.out.println();
+
+        // Les constructeurs
+        System.out.println("Les constructeurs");
+        Bateau newBateau = new Bateau();
+
+        System.out.println(Bateau.nbBateauxCrees + " bateaux ont été instanciés");
+
+        Ville villeDeCalais = new Ville("Calais", portDeCalais);
+        System.out.println("La ville de " + villeDeCalais.nom + " a un port de " + villeDeCalais.port.nbEmplacements + " emplacements.");
+    }
+
+}

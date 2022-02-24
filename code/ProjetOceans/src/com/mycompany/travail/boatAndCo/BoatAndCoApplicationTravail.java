@@ -132,7 +132,6 @@ public class BoatAndCoApplicationTravail {
 
         Ville villeDeDunkerque = new Ville("Dunkerque", 45);
 
-
         Cargo monCargo = new Cargo();
 
     }

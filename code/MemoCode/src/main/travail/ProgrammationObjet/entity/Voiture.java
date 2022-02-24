@@ -1,6 +1,5 @@
 package main.travail.ProgrammationObjet.entity;
 
-
 public class Voiture {
     // Propriétés
     public static int nbRoues = 4;

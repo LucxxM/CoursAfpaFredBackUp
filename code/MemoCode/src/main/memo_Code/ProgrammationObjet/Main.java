@@ -1,8 +1,9 @@
 package main.memo_Code.ProgrammationObjet;
 
-
 import main.memo_Code.ProgrammationObjet.entity.Moteur;
+import main.memo_Code.ProgrammationObjet.entity.Passager;
 import main.memo_Code.ProgrammationObjet.entity.Voiture;
+import main.travail.ProgrammationObjet.entity.Ville;
 
 import java.util.Scanner;
 
@@ -13,14 +14,14 @@ public class Main {
         Voiture voitureDeThomas = new Voiture();
 
         // Valorisation des proprietes
-        voitureDeMichel.immatriculation = "123AZE56";
-        voitureDeMichel.marque = "Renaut";
-        System.out.println("Le nombre de porte de la voiture est " + voitureDeMichel.nbPortes);
+        voitureDeMichel.setImmatriculation("123AZE56");
+        voitureDeMichel.setMarque("Renaut");
+        System.out.println("Le nombre de porte de la voiture est " + voitureDeMichel.getNbPortes());
 
         // Modification de la valeur d'une propriété
-        voitureDeMichel.nbPortes = 5;
-        System.out.println("Le nombre de porte de la voiture est maintenant" + voitureDeMichel.nbPortes);
-        System.out.println("La voiture de Michel est de marque " + voitureDeMichel.marque + ", son immatriculation est " + voitureDeMichel.immatriculation + " et elle a " + voitureDeMichel.nbPortes + " portes");
+        voitureDeMichel.setNbPortes(5);
+        System.out.println("Le nombre de porte de la voiture est maintenant" + voitureDeMichel.getNbPortes());
+        System.out.println("La voiture de Michel est de marque " + voitureDeMichel.getMarque() + ", son immatriculation est " + voitureDeMichel.getImmatriculation() + " et elle a " + voitureDeMichel.getNbPortes() + " portes");
 
         // Appel d'une méthode sans retour (void) et sans paramétres
         voitureDeMichel.klaxonner();
@@ -68,23 +69,26 @@ public class Main {
 
 
         Voiture voitureDeMartin = new Voiture();
-        voitureDeMartin.marque = "Citroen";
-        voitureDeMartin.immatriculation = "122ZZ62";
-        voitureDeMartin.nbPortes = 4;
+        voitureDeMartin.setMarque("Citroen");
 
 
-        String marqueDeLaVoitureDeMartin = voitureDeMartin.marque;
-        int nbDePortesDeLaVoitureDeMartin = voitureDeMartin.nbPortes;
 
-        Moteur nouveauMoteur = new Moteur();
-        nouveauMoteur.motorisation = "Diesel";
-        nouveauMoteur.nbCylindres = 4;
+
+        voitureDeMartin.setImmatriculation("122ZZ62");
+        voitureDeMartin.setNbPortes(4);
+
+
+        String marqueDeLaVoitureDeMartin = voitureDeMartin.getMarque();
+        int nbDePortesDeLaVoitureDeMartin = voitureDeMartin.getNbPortes();
+
+        Moteur nouveauMoteur = new Moteur(4, "Essence");
+
 
         nouveauMoteur.afficheMotorisation();
 
-        voitureDeMartin.moteur = nouveauMoteur;
+        voitureDeMartin.setMoteur(nouveauMoteur);
 
-        System.out.println("La motorisation du moteur de la voiture de Martin est " +voitureDeMartin.moteur.motorisation);
+        System.out.println("La motorisation du moteur de la voiture de Martin est " +voitureDeMartin.getMoteur().motorisation);
 
         System.out.println();
 
@@ -111,6 +115,54 @@ public class Main {
 
         int tailleTableauInt = tableauString.length;
         System.out.println("La taille du tableau de int est : " + tailleTableauInt);
+
+        System.out.println();
+
+        // Methodes avec objets
+        System.out.println("Methodes avec objets");
+
+        Passager passagerDurand = new Passager();
+        passagerDurand.nom = "Durand";
+        passagerDurand.prenom = "David";
+
+        Ville maVille = new Ville();
+        maVille.nom = "Lille";
+
+        Ville villeRetour = voitureDeMartin.transporter(passagerDurand, maVille);
+
+        System.out.println("Le passager est arrivé à " + villeRetour.nom);
+
+        System.out.println("Grace à la propriété statique, la voiture de Martin a " + Voiture.nbRoues);
+
+        Voiture.nbRoues = 5;
+        System.out.println("Grace à la propriété statique, la voiture de Martin a " + Voiture.nbRoues);
+
+        // Appel methode statique
+        System.out.println();
+        Voiture.klaxonner();
+
+        System.out.println("La nouvelle vitesse, calculée par la méthode statique est "+ Voiture.donnerNouvelleVitesse(50));
+
+        System.out.println("Ma voiture a maintenant "+ Voiture.donnerNbRoues() + " roues");
+
+
+        // Constructeurs
+        Voiture voitureJaune = new Voiture("jaune");
+
+        System.out.println("J'ai crée une voiture de couleur " + voitureJaune.getCouleur() + " grace au constructeur qui prend en parametre la couleur");
+
+        Moteur moteurRenaut = new Moteur(4, "Essence");
+
+        Voiture voitureRenaut = new Voiture(moteurRenaut);
+        System.out.println("La voiture voitureRenaut a " + voitureRenaut.getMoteur().nbCylindres + " cylindres.");
+
+        System.out.println();
+
+        // Getters & Setters
+        System.out.println("Getters & Setters");
+
+
+
 
 
     }

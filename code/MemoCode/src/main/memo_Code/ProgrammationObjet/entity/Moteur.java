@@ -4,6 +4,14 @@ public class Moteur {
     public int nbCylindres;
     public String motorisation;
 
+    public Moteur() {
+    }
+
+    public Moteur(int nbCylindres, String motorisation){
+        this.nbCylindres = nbCylindres;
+        this.motorisation = motorisation;
+    }
+
 
     // méthodes
     public void afficheMotorisation(){
