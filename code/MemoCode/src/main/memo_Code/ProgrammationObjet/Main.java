@@ -88,7 +88,7 @@ public class Main {
 
         voitureDeMartin.setMoteur(nouveauMoteur);
 
-        System.out.println("La motorisation du moteur de la voiture de Martin est " +voitureDeMartin.getMoteur().motorisation);
+        System.out.println("La motorisation du moteur de la voiture de Martin est " +voitureDeMartin.getMoteur().getMotorisation());
 
         System.out.println();
 
@@ -122,7 +122,7 @@ public class Main {
         System.out.println("Methodes avec objets");
 
         Passager passagerDurand = new Passager();
-        passagerDurand.nom = "Durand";
+        passagerDurand.getPrenom("Durand");
         passagerDurand.prenom = "David";
 
         Ville maVille = new Ville();
@@ -154,12 +154,22 @@ public class Main {
         Moteur moteurRenaut = new Moteur(4, "Essence");
 
         Voiture voitureRenaut = new Voiture(moteurRenaut);
-        System.out.println("La voiture voitureRenaut a " + voitureRenaut.getMoteur().nbCylindres + " cylindres.");
+        System.out.println("La voiture voitureRenaut a " + voitureRenaut.getMoteur().getNbCylindres() + " cylindres.");
 
         System.out.println();
 
         // Getters & Setters
         System.out.println("Getters & Setters");
+
+        Moteur moteurDemo = new Moteur();
+
+        moteurDemo.setMotorisation("Diesel");
+        // remplace
+        // moteurDemo.motorisation = "Diesel";
+
+        System.out.println(moteurDemo.getMotorisation());
+        // remplace
+        // System.out.println(moteurDemo.motorisation);
 
 
 

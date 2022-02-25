@@ -109,11 +109,11 @@ public class Voiture {
     }
 
     public void transporter (Passager passager){
-        System.out.println("Je transporte un passager qui s'appelle "+ passager.prenom +" " + passager.nom);
+        System.out.println("Je transporte un passager qui s'appelle "+ passager.getPrenom() +" " + passager.getPrenom());
     }
 
     public Ville transporter (Passager passager, Ville ville){
-        System.out.println("Je transporte un passager qui s'appelle "+ passager.prenom +" " + passager.nom +
+        System.out.println("Je transporte un passager qui s'appelle "+ passager.getPrenom() +" " + passager.getPrenom() +
                 " en partant de " +ville.nom);
 
         Ville villeArrivee = new Ville();

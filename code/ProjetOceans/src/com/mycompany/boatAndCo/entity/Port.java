@@ -1,9 +1,9 @@
 package com.mycompany.boatAndCo.entity;
 
 public class Port {
-    public String nom;
-    public int nbEmplacements;
-    public Bateau[] emplacements;
+    private String nom;
+    private int nbEmplacements;
+    private Bateau[] emplacements;
 
     private int nbEmplacementsLibres;
 
@@ -18,6 +18,38 @@ public class Port {
         }
 
         return false;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getNbEmplacements() {
+        return nbEmplacements;
+    }
+
+    public void setNbEmplacements(int nbEmplacements) {
+        this.nbEmplacements = nbEmplacements;
+    }
+
+    public Bateau[] getEmplacements() {
+        return emplacements;
+    }
+
+    public void setEmplacements(Bateau[] emplacements) {
+        this.emplacements = emplacements;
+    }
+
+    public int getNbEmplacementsLibres() {
+        return nbEmplacementsLibres;
+    }
+
+    public void setNbEmplacementsLibres(int nbEmplacementsLibres) {
+        this.nbEmplacementsLibres = nbEmplacementsLibres;
     }
 }
 

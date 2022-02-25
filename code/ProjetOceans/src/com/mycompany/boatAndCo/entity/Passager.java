@@ -2,9 +2,9 @@ package com.mycompany.boatAndCo.entity;
 
 public class Passager {
     public static int nbPassagersCréés = 0;
-    public String nom;
-    public String prenom;
-    public Adress adress;
+    private String nom;
+    private String prenom;
+    private Adress adress;
 
     public Passager() {
         System.out.println("Un passager est instancié via le constructeur sans paramètres");
@@ -46,5 +46,37 @@ public class Passager {
         this.adress = adresse;
 
         nbPassagersCréés++;
+    }
+
+    public static int getNbPassagersCréés() {
+        return nbPassagersCréés;
+    }
+
+    public static void setNbPassagersCréés(int nbPassagersCréés) {
+        Passager.nbPassagersCréés = nbPassagersCréés;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public Adress getAdress() {
+        return adress;
+    }
+
+    public void setAdress(Adress adress) {
+        this.adress = adress;
     }
 }

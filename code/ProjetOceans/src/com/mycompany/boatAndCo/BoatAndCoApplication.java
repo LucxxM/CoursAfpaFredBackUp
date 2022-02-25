@@ -61,17 +61,18 @@ public class BoatAndCoApplication {
         System.out.println("Ajout d'une propriété de type objet");
 
         Bateau bateauDeMichel = new Bateau();
-        bateauDeMichel.marque = "Honda";
-        bateauDeMichel.couleur = "Blanc";
+        bateauDeMichel.setMarque("Honda");
+        bateauDeMichel.setCouleur("Blanc");
 
         Moteur moteur = new Moteur();
-        moteur.anneeFabricationMoteur = "1998";
+        moteur.setAnneeFabricationMoteur("1998");
         moteur.carburation = "Diesel";
-        moteur.NbCylindres = 4;
+        moteur.setNbCylindres(4);
 
-        bateauDeMichel.moteur = moteur;
+        bateauDeMichel.setMoteur(moteur);
+        System.out.println(bateauDeMichel.getCouleur());
 
-        System.out.println("Le moteur du bateau de Michel est du type : " + bateauDeMichel.moteur.carburation);
+        System.out.println("Le moteur du bateau de Michel est du type : " + Bateau.getCarburation());
 
         System.out.println();
 
@@ -85,12 +86,12 @@ public class BoatAndCoApplication {
 
         System.out.println("Exercice Ocean : ArrayList");
         Port portDeCalais = new Port();
-        portDeCalais.nom = "Calais";
-        portDeCalais.nbEmplacements = 4;
+        portDeCalais.setNom("Calais");
+        portDeCalais.setNbEmplacements(4);
 
         int nbEmplacements = 5;
 
-        portDeCalais.emplacements = new Bateau[nbEmplacements];
+        portDeCalais.setEmplacements(new Bateau[nbEmplacements]);
 
         bateauDeMichel.rentrerAuPort(portDeCalais);
 
@@ -117,10 +118,10 @@ public class BoatAndCoApplication {
         System.out.println("Les constructeurs");
         Bateau newBateau = new Bateau();
 
-        System.out.println(Bateau.nbBateauxCrees + " bateaux ont été instanciés");
+        System.out.println(Bateau.getNbBateauxCrees() + " bateaux ont été instanciés");
 
         Ville villeDeCalais = new Ville("Calais", portDeCalais);
-        System.out.println("La ville de " + villeDeCalais.nom + " a un port de " + villeDeCalais.port.nbEmplacements + " emplacements.");
+        System.out.println("La ville de " + villeDeCalais.getNom() + " a un port de " + villeDeCalais.getPort().getNom() + " emplacements.");
     }
 
 }
