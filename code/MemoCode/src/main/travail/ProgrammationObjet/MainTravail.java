@@ -1,10 +1,11 @@
 package main.travail.ProgrammationObjet;
 
+import main.memo_Code.ProgrammationObjet.entity.Moteur;
+import main.memo_Code.ProgrammationObjet.entity.Passager;
+import main.memo_Code.ProgrammationObjet.entity.Ville;
+import main.memo_Code.ProgrammationObjet.entity.Voiture;
 
-import main.travail.ProgrammationObjet.entity.Moteur;
-import main.travail.ProgrammationObjet.entity.Passager;
-import main.travail.ProgrammationObjet.entity.Ville;
-import main.travail.ProgrammationObjet.entity.Voiture;
+import java.util.Scanner;
 
 public class MainTravail {
     public static void main(String[] args) {
@@ -60,7 +61,6 @@ public class MainTravail {
         voitureDeMichel.accelerer(40);
 
         System.out.println();
-
         // Mot cle this
         System.out.println("Utilisation de this");
 
@@ -70,6 +70,10 @@ public class MainTravail {
 
         Voiture voitureDeMartin = new Voiture();
         voitureDeMartin.setMarque("Citroen");
+
+
+
+
         voitureDeMartin.setImmatriculation("122ZZ62");
         voitureDeMartin.setNbPortes(4);
 
@@ -77,74 +81,99 @@ public class MainTravail {
         String marqueDeLaVoitureDeMartin = voitureDeMartin.getMarque();
         int nbDePortesDeLaVoitureDeMartin = voitureDeMartin.getNbPortes();
 
-        Moteur nouveauMoteur = new Moteur();
-        nouveauMoteur.motorisation = "Diesel";
-        nouveauMoteur.nbCylindres = 4;
+        Moteur nouveauMoteur = new Moteur(4, "Essence");
+
 
         nouveauMoteur.afficheMotorisation();
 
         voitureDeMartin.setMoteur(nouveauMoteur);
 
-        System.out.println("La motorisation du moteur de la voiture de Martin est " +voitureDeMartin.getMoteur().motorisation);
+        System.out.println("La motorisation du moteur de la voiture de Martin est " +voitureDeMartin.getMoteur().getMotorisation());
 
         System.out.println();
 
+        // ArrayList
 
-        // méthodes avec des parametres de type Objet
+        System.out.println("ArrayList");
 
-        Passager passagerDupont = new Passager();
-        passagerDupont.firstname = "David";
-        passagerDupont.lastname = "Dupont";
+        int[] tableauInt =  new int[5];
 
-        Ville villeDeDepart = new Ville();
-        villeDeDepart.nom = "Lille";
+        String[] tableauString = new String[5];
 
-        Ville villeArrivee = voitureDeMichel.transporter(passagerDupont, villeDeDepart);
-        System.out.println("Le passager est arrivé à " + villeArrivee.nom);
+        Voiture[] tableauDeVoitures = new Voiture[5];
 
+        tableauInt[0] = 9;
+        System.out.println("Le premier élément du tableau de int est " + tableauInt[0]);
 
+        tableauString[1] = "toto";
+        System.out.println("Le deuxielme élément du tableau de String est  " + tableauString[1]);
 
-        // Propriétés statiques
+        Voiture newVoiture = new Voiture();
+        tableauDeVoitures[2] = newVoiture;
 
-        System.out.println("Le nombre de roues d'une voiture en général est : " +Voiture.nbRoues);
+        tableauDeVoitures[3] = new Voiture();
 
-        System.out.println("La voiture de Michel a " +voitureDeMichel.nbRoues + " roues");
-        System.out.println("La voiture de Martin a " +voitureDeMartin.nbRoues + " roues");
-
-        Voiture.nbRoues = 6;
-        System.out.println("La voiture de Michel a " +voitureDeMichel.nbRoues + " roues");
-        System.out.println("La voiture de Martin a " +voitureDeMartin.nbRoues + " roues");
-
-        // Méthodes statiques
-        Voiture.klaxonner();
-        voitureDeMartin.klaxonner();
-
-        System.out.println("Ma nouvelle vitesse est : " + Voiture.donnerNouvelleVitesse(20));
-
+        int tailleTableauInt = tableauString.length;
+        System.out.println("La taille du tableau de int est : " + tailleTableauInt);
 
         System.out.println();
-        // Les constructeurs
-        Voiture voitureDeMarcel = new Voiture();
 
-        Voiture voitureJaune = new Voiture("jaune");
-        System.out.println("La couleur de la voiture est " + voitureJaune.getCouleur());
-        voitureJaune.setCouleur("verte");
-        System.out.println("La nouvelle couleur est " + voitureJaune.getCouleur());
-
-        // Constructeur avec un parametre objet
-        Moteur moteurRenaut = new Moteur();
-        moteurRenaut.nbCylindres = 8;
-        Voiture voitureRenaud = new Voiture(moteurRenaut);
-        System.out.println("La voiture a " + voitureRenaud.getMoteur().nbCylindres + " cylindres.");
-
-        // Constructeur avec Moteur
-        Voiture voitureAvecMoteur = new Voiture(4, "Essence");
-        System.out.println("La voiture voitureAvecMoteur a un moteur " + voitureAvecMoteur.getMoteur().motorisation + " et a " + voitureAvecMoteur.getMoteur().nbCylindres + " cylindres");
-
-
+        // Methodes avec objets
+        System.out.println("Methodes avec objets");
 
         Passager passagerDurand = new Passager();
+        passagerDurand.setPrenom("Durand");
+        passagerDurand.setPrenom("David");
+
+        Ville maVille = new Ville();
+        maVille.setNom("Lille");
+
+        Ville villeRetour = voitureDeMartin.transporter(passagerDurand, maVille);
+
+        System.out.println("Le passager est arrivé à " + villeRetour.getNom());
+
+        System.out.println("Grace à la propriété statique, la voiture de Martin a " + Voiture.nbRoues);
+
+        Voiture.nbRoues = 5;
+        System.out.println("Grace à la propriété statique, la voiture de Martin a " + Voiture.nbRoues);
+
+        // Appel methode statique
+        System.out.println();
+        Voiture.klaxonner();
+
+        System.out.println("La nouvelle vitesse, calculée par la méthode statique est "+ Voiture.donnerNouvelleVitesse(50));
+
+        System.out.println("Ma voiture a maintenant "+ Voiture.donnerNbRoues() + " roues");
 
 
-}
+        // Constructeurs
+        Voiture voitureJaune = new Voiture("jaune");
+
+        System.out.println("J'ai crée une voiture de couleur " + voitureJaune.getCouleur() + " grace au constructeur qui prend en parametre la couleur");
+
+        Moteur moteurRenaut = new Moteur(4, "Essence");
+
+        Voiture voitureRenaut = new Voiture(moteurRenaut);
+        System.out.println("La voiture voitureRenaut a " + voitureRenaut.getMoteur().getNbCylindres() + " cylindres.");
+
+        System.out.println();
+
+        // Getters & Setters
+        System.out.println("Getters & Setters");
+
+        Moteur moteurDemo = new Moteur();
+
+        moteurDemo.setMotorisation("Diesel");
+        // remplace
+        // moteurDemo.motorisation = "Diesel";
+
+        System.out.println(moteurDemo.getMotorisation());
+        // remplace
+        // System.out.println(moteurDemo.motorisation);
+
+
+
+
+
+    }
 }

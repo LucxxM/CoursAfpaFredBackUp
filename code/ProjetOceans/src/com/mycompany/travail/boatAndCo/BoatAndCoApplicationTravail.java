@@ -1,21 +1,19 @@
 package com.mycompany.travail.boatAndCo;
 
-
+import com.mycompany.boatAndCo.entity.Boat;
+import com.mycompany.boatAndCo.entity.City;
+import com.mycompany.boatAndCo.entity.Motor;
 import com.mycompany.travail.boatAndCo.entity.*;
-
-import java.util.Scanner;
 
 public class BoatAndCoApplicationTravail {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        com.mycompany.boatAndCo.entity.Person clientdurand = new com.mycompany.boatAndCo.entity.Person();
+        com.mycompany.boatAndCo.entity.Person clientDupont = new com.mycompany.boatAndCo.entity.Person();
 
-        Person clientdurand = new Person();
-        Person clientDupont = new Person();
-
-        clientdurand.firstname = "David";
-        clientdurand.lastname = "Durand";
-        clientdurand.age = 45;
-        clientdurand.dateOfBirth = "12/02/1974";
+        clientdurand.setFirstname("David");
+        clientdurand.setLastname("Durand");
+        clientdurand.setAge(45);
+        clientdurand.setDateOfBirth("12/02/1974");
 
         // pas de valeur de retour, pas de parametre
         System.out.println("pas de valeur de retour, pas de parametre");
@@ -34,13 +32,13 @@ public class BoatAndCoApplicationTravail {
         // Avec 1 parametre
         System.out.println("Avec 1 parametre");
 
-        System.out.println("M.Durand a " + clientdurand.age + " ans.");
+        System.out.println("M.Durand a " + clientdurand.getAge() + " ans.");
         int nouvelAge = clientdurand.vieillir(45);
         System.out.println("Après l'appel de la méthode vieillir, l'age est = " + nouvelAge);
-        System.out.println("La propriété age a toujours la valeur :  " + clientdurand.age);
+        System.out.println("La propriété age a toujours la valeur :  " + clientdurand.getAge());
 
-        clientdurand.age = clientdurand.vieillir(45);
-        System.out.println("age vaut maintenant : " + clientdurand.age);
+        clientdurand.setAge(clientdurand.vieillir(45));
+        System.out.println("age vaut maintenant : " + clientdurand.getAge());
 
         System.out.println();
 
@@ -49,7 +47,7 @@ public class BoatAndCoApplicationTravail {
 
         int anneeAnciennete = clientdurand.calculerAnciennete(2007, true);
 
-        System.out.println("Monsieur " + clientdurand.firstname + " " + clientdurand.lastname + " a " + anneeAnciennete + " ans d'anciennete");
+        System.out.println("Monsieur " + clientdurand.getFirstname() + " " + clientdurand.getLastname() + " a " + anneeAnciennete + " ans d'anciennete");
 
         System.out.println();
 
@@ -65,75 +63,67 @@ public class BoatAndCoApplicationTravail {
         // Ajout d'une propriété de type objet
         System.out.println("Ajout d'une propriété de type objet");
 
-        Bateau bateauDeMichel = new Bateau();
-        bateauDeMichel.marque = "Honda";
-        bateauDeMichel.couleur = "Blanc";
+        com.mycompany.boatAndCo.entity.Boat boatDeMichel = new com.mycompany.boatAndCo.entity.Boat();
+        boatDeMichel.setBrand("Honda");
+        boatDeMichel.setColor("Blanc");
 
-        Moteur moteur = new Moteur();
-        moteur.anneeFabricationMoteur = "1998";
-        moteur.carburation = "Diesel";
-        moteur.NbCylindres = 4;
+        Motor motor = new Motor();
+        motor.setYearOfManufacture("1998");
+        motor.setNbCylinder(4);
 
-        bateauDeMichel.moteur = moteur;
+        boatDeMichel.setMotor(motor);
+        System.out.println(boatDeMichel.getColor());
 
-        System.out.println("Le moteur du bateau de Michel est du type : " + bateauDeMichel.moteur.carburation);
-
-        // Exercice Surcharge
-        // Exercice 1
-        bateauDeMichel.moteur = moteur;
-
-        String messageRetour = bateauDeMichel.moteur.demarrer(30);
-        System.out.println(messageRetour);
-
-        // Exercice 2
-        Adress adress = new Adress();
-        adress.number = 45;
-        adress.street = "rue Verte";
-        adress.cp = 59000;
-        adress.city = "Lille";
-
-        clientdurand.adress = adress;
-        System.out.println("M.Durand habite " + clientdurand.adress.number + " " + clientdurand.adress.street +
-                " " + clientdurand.adress.street + " " + clientdurand.adress.cp + " " + clientdurand.adress.city);
+        System.out.println("Le moteur du bateau de Michel est du type : " + com.mycompany.boatAndCo.entity.Boat.getCarburation());
 
         System.out.println();
 
-        //Exercice ArrayList
-
-        System.out.println("Exercice ArrayList");
-        // Création du port de Calais
-        Port portDeCalais = new Port();
-        int nbEmplacements = 10;
-        Bateau[] emplacements = new Bateau[nbEmplacements];
-        portDeCalais.emplacements = emplacements;
-
-        bateauDeMichel.rentrerAuPort(portDeCalais);
+        // Exercice Surcharge
+        System.out.println("Exercice Surcharge");
 
 
-        // Des méthodes qui référencent des objets
-        // a faire en direct
+        System.out.println();
 
-        // Atributs statiques
-        System.out.println("Les moteurs des bateaux sont en général de type " + Moteur.carburation);
-        System.out.println("Le bateau de Michel est de type " + bateauDeMichel.moteur.carburation);
+        // Exercice Ocean : ArrayList
 
-        // Méthodes statiques
-        System.out.println("Nous avons parcouru " + Bateau.calculerDistanceParcourue(3, 45) +
-                " grace au moteur " + Moteur.carburation + " du bateau");
+        System.out.println("Exercice Ocean : ArrayList");
+        com.mycompany.boatAndCo.entity.Port portDeCalais = new com.mycompany.boatAndCo.entity.Port();
+        portDeCalais.setName("Calais");
+        portDeCalais.setNbOfDisponiblesSites(4);
 
-        // Constructeurs (1)
-        Bateau bateauDeMarcel = new Bateau();
-        System.out.println(Bateau.nbBateauxCree + " bateaux ont été instanciés.");
+        int nbEmplacements = 5;
 
-        // Constructeur (2)
-        Port portDeMarseille = new Port("Marseille", 20);
-        Ville villedeCalais = new Ville(portDeCalais);
-        // System.out.println("La ville de Calais a un port de " + villedeCalais.);
+        portDeCalais.setSites(new com.mycompany.boatAndCo.entity.Boat[nbEmplacements]);
 
-        Ville villeDeDunkerque = new Ville("Dunkerque", 45);
+        boatDeMichel.rentrerAuPort(portDeCalais);
 
-        Cargo monCargo = new Cargo();
+        com.mycompany.boatAndCo.entity.Port monPort = new com.mycompany.boatAndCo.entity.Port();
 
+        System.out.println();
+        // Proprietes statiques
+        System.out.println("Proprietes statiques");
+
+        System.out.println("Grace à la propriété statique, tous les bateaux instanciés ont un moteur " + Motor.getCarburation());
+
+        System.out.println();
+        // Exercice Ocean
+        System.out.println("exercice Ocean");
+
+        // int distanceParcourue = Bateau.calculerDistanceParcourue(3,45);
+
+        System.out.println("Nous avons parcouru " + com.mycompany.boatAndCo.entity.Boat.calculerDistanceParcourue(3, 45) +
+                " kms grace au moteur " + Motor.getCarburation() + " du bateau");
+
+        System.out.println();
+
+        // Les constructeurs
+        System.out.println("Les constructeurs");
+        com.mycompany.boatAndCo.entity.Boat newBoat = new com.mycompany.boatAndCo.entity.Boat();
+
+        System.out.println(Boat.getNbOfBoatCreated() + " bateaux ont été instanciés");
+
+        City cityDeCalais = new City("Calais", portDeCalais);
+        System.out.println("La ville de " + cityDeCalais.getNom() + " a un port de " + cityDeCalais.getPort().getName() + " emplacements.");
     }
-}
 
+}

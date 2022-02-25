@@ -1,31 +1,31 @@
 package com.mycompany.boatAndCo.entity;
 
-public class Ville {
-    private String nom;
+public class City {
+    private String name;
     private Port port;
 
-    public Ville(String nom, Port port) {
+    public City(String nom, Port port) {
         System.out.println("J'instancie une ville avec son nom et un objet Port");
-        this.nom = nom;
+        this.name = nom;
         this.port = port;
     }
 
-    public Ville(Port port) {
+    public City(Port port) {
         System.out.println("J'instancie une ville avec un objet Port");
         this.port = port;
     }
 
-    public Ville(String nom, int nbEmplacements) {
+    public City(String name, int nbEmplacements) {
         System.out.println("J'instancie une ville avec son nom et le nombre d'empalcements");
-        this.nom = nom;
+        this.name = name;
     }
 
     public String getNom() {
-        return nom;
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setNom(String name) {
+        this.name = name;
     }
 
     public Port getPort() {

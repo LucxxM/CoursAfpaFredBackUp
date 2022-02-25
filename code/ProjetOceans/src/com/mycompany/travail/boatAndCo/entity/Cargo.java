@@ -1,6 +1,6 @@
 package com.mycompany.travail.boatAndCo.entity;
 
-public class Cargo extends Bateau{
+public class Cargo extends Boat {
     private int tonnageMax;
 
     public int getTonnageMax() {

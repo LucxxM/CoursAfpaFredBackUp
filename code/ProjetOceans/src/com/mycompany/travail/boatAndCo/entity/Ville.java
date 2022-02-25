@@ -1,22 +1,38 @@
 package com.mycompany.travail.boatAndCo.entity;
 
 public class Ville {
-    public String nom;
-    Port port;
+    private String nom;
+    private Port port;
 
-    public Ville(Port port) {
-        System.out.println("Une ville est crée avec un port en parametre");
+    public Ville(String nom, Port port) {
+        System.out.println("J'instancie une ville avec son nom et un objet Port");
+        this.nom = nom;
         this.port = port;
     }
 
-    public Ville(String nomVille, int nbEmplacements){
-        System.out.println("Une ville est crée avec un nom et un nombre d'emplacement");
-        this.nom = nomVille;
-
-        Port port = new Port();
-        port.ville = nomVille;
-        port.nbEmplacements = nbEmplacements;
+    public Ville(Port port) {
+        System.out.println("J'instancie une ville avec un objet Port");
+        this.port = port;
     }
 
+    public Ville(String nom, int nbEmplacements) {
+        System.out.println("J'instancie une ville avec son nom et le nombre d'empalcements");
+        this.nom = nom;
+    }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public Port getPort() {
+        return port;
+    }
+
+    public void setPort(Port port) {
+        this.port = port;
+    }
 }

@@ -1,5 +1,21 @@
 package main.travail.ProgrammationObjet.entity;
 
 public class Ville {
-    public String nom;
+    private String nom;
+
+    public Ville(String nom) {
+        this.nom = nom;
+    }
+
+    public Ville() {
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 }
+

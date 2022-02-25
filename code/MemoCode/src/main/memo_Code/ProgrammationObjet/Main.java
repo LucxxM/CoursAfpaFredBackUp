@@ -2,8 +2,8 @@ package main.memo_Code.ProgrammationObjet;
 
 import main.memo_Code.ProgrammationObjet.entity.Moteur;
 import main.memo_Code.ProgrammationObjet.entity.Passager;
+import main.memo_Code.ProgrammationObjet.entity.Ville;
 import main.memo_Code.ProgrammationObjet.entity.Voiture;
-import main.travail.ProgrammationObjet.entity.Ville;
 
 import java.util.Scanner;
 
@@ -122,15 +122,15 @@ public class Main {
         System.out.println("Methodes avec objets");
 
         Passager passagerDurand = new Passager();
-        passagerDurand.getPrenom("Durand");
-        passagerDurand.prenom = "David";
+        passagerDurand.setPrenom("Durand");
+        passagerDurand.setPrenom("David");
 
         Ville maVille = new Ville();
-        maVille.nom = "Lille";
+        maVille.setNom("Lille");
 
         Ville villeRetour = voitureDeMartin.transporter(passagerDurand, maVille);
 
-        System.out.println("Le passager est arrivé à " + villeRetour.nom);
+        System.out.println("Le passager est arrivé à " + villeRetour.getNom());
 
         System.out.println("Grace à la propriété statique, la voiture de Martin a " + Voiture.nbRoues);
 

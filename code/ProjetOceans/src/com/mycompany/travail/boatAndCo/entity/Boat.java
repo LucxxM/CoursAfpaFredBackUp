@@ -1,13 +1,13 @@
-package com.mycompany.boatAndCo.entity;
+package com.mycompany.travail.boatAndCo.entity;
 
-public class Bateau {
+public class Boat {
     public static String carburation = "Diesel";
     private static int nbBateauxCrees = 0;
     private String marque;
     private String couleur;
     private Moteur moteur;
 
-    public Bateau(){
+    public Boat(){
         System.out.println("Un bateau est instancié à partir du constructeur vide");
         nbBateauxCrees++;
     }
@@ -37,7 +37,7 @@ public class Bateau {
     }
 
     public static void setCarburation(String carburation) {
-        Bateau.carburation = carburation;
+        Boat.carburation = carburation;
     }
 
     public static int getNbBateauxCrees() {
@@ -45,7 +45,7 @@ public class Bateau {
     }
 
     public static void setNbBateauxCrees(int nbBateauxCrees) {
-        Bateau.nbBateauxCrees = nbBateauxCrees;
+        Boat.nbBateauxCrees = nbBateauxCrees;
     }
 
     public String getMarque() {

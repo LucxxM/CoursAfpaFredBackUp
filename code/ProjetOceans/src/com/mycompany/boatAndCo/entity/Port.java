@@ -1,13 +1,13 @@
 package com.mycompany.boatAndCo.entity;
 
 public class Port {
-    private String nom;
-    private int nbEmplacements;
-    private Bateau[] emplacements;
+    private String name;
+    private int nbOfDisponiblesSites;
+    private Boat[] sites;
 
-    private int nbEmplacementsLibres;
+    private int nbOffreeSites;
 
-    public boolean restePlaceDisponible(Bateau[] emplacements) {
+    public boolean restePlaceDisponible(Boat[] emplacements) {
         boolean restePlaceDisponible = false;
 
         for (int index = 0; index < emplacements.length; index++) {
@@ -20,36 +20,36 @@ public class Port {
         return false;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getNbEmplacements() {
-        return nbEmplacements;
+    public int getNbOfDisponiblesSites() {
+        return nbOfDisponiblesSites;
     }
 
-    public void setNbEmplacements(int nbEmplacements) {
-        this.nbEmplacements = nbEmplacements;
+    public void setNbOfDisponiblesSites(int nbOfDisponiblesSites) {
+        this.nbOfDisponiblesSites = nbOfDisponiblesSites;
     }
 
-    public Bateau[] getEmplacements() {
-        return emplacements;
+    public Boat[] getSites() {
+        return sites;
     }
 
-    public void setEmplacements(Bateau[] emplacements) {
-        this.emplacements = emplacements;
+    public void setSites(Boat[] sites) {
+        this.sites = sites;
     }
 
-    public int getNbEmplacementsLibres() {
-        return nbEmplacementsLibres;
+    public int getNbOffreeSites() {
+        return nbOffreeSites;
     }
 
-    public void setNbEmplacementsLibres(int nbEmplacementsLibres) {
-        this.nbEmplacementsLibres = nbEmplacementsLibres;
+    public void setNbOffreeSites(int nbOffreeSites) {
+        this.nbOffreeSites = nbOffreeSites;
     }
 }
 

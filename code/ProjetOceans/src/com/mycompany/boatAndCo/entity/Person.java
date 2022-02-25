@@ -2,11 +2,10 @@ package com.mycompany.boatAndCo.entity;
 
 public class Person {
     // Propriétés
-    public String lastname;
-    public String firstname;
-    public int age;
-    public int valeurParDefaut = 45;
-    public String dateOfBirth;
+    private String lastname;
+    private String firstname;
+    private int age;
+    private String dateOfBirth;
 
     // Méthodes
     // Sans valeur de retour et sans parametres
@@ -54,5 +53,37 @@ public class Person {
         } else {
             System.out.println("Mes cotisations ne sont pas à jour");
         }
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }

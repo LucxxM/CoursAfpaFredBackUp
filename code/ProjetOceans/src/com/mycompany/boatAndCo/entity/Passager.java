@@ -1,82 +1,82 @@
 package com.mycompany.boatAndCo.entity;
 
 public class Passager {
-    public static int nbPassagersCréés = 0;
-    private String nom;
-    private String prenom;
-    private Adress adress;
+    public static int nbOfpassagersCreated = 0;
+    private String lastname;
+    private String firstname;
+    private Adress address;
 
     public Passager() {
         System.out.println("Un passager est instancié via le constructeur sans paramètres");
-        nbPassagersCréés++;
+        nbOfpassagersCreated++;
     }
 
-    public Passager(String nom){
+    public Passager(String lastname){
         System.out.println("Un passager est instancié via le constructeur qui prend " +
                 "en paramètre le nom du passager");
-        this.nom = nom;
-        nbPassagersCréés++;
+        this.lastname = lastname;
+        nbOfpassagersCreated++;
     }
 
-    public Passager (String nom, String prenom){
+    public Passager (String lastname, String prenom){
         System.out.println("Un passager est instancié via le constructeur qui prend " +
                 "en paramètre le nom et le prénom du passager");
-        this.nom = nom;
-        this.prenom = prenom;
-        nbPassagersCréés++;
+        this.lastname = lastname;
+        this.firstname = prenom;
+        nbOfpassagersCreated++;
     }
 
-    public Passager (String nom, String prenom, Adress adress){
+    public Passager (String lastname, String prenom, Adress adress){
         System.out.println("Un passager est instancié via le constructeur qui prend " +
                 "en paramètre le nom, le prénom  et l'adresse du passager du passager");
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adress = adress;
-        nbPassagersCréés++;
+        this.lastname = lastname;
+        this.firstname = prenom;
+        this.address = adress;
+        nbOfpassagersCreated++;
     }
 
-    public Passager (String nom, String prenom, int number, String street, int cp, String  city){
+    public Passager (String lastname, String prenom, int number, String street, int cp, String  city){
         System.out.println("Un passager est instancié via le constructeur qui prend " +
                 "en paramètre le nom, le prénom  et l'adresse détaillée du passager");
-        this.nom = nom;
-        this.prenom = prenom;
+        this.lastname = lastname;
+        this.firstname = prenom;
 
         Adress adresse = new Adress(number, street, cp, city);
 
-        this.adress = adresse;
+        this.address = adresse;
 
-        nbPassagersCréés++;
+        nbOfpassagersCreated++;
     }
 
-    public static int getNbPassagersCréés() {
-        return nbPassagersCréés;
+    public static int getNbOfpassagersCreated() {
+        return nbOfpassagersCreated;
     }
 
-    public static void setNbPassagersCréés(int nbPassagersCréés) {
-        Passager.nbPassagersCréés = nbPassagersCréés;
+    public static void setNbOfpassagersCreated(int nbOfpassagersCreated) {
+        Passager.nbOfpassagersCreated = nbOfpassagersCreated;
     }
 
-    public String getNom() {
-        return nom;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public Adress getAdress() {
-        return adress;
+    public Adress getAddress() {
+        return address;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAddress(Adress address) {
+        this.address = address;
     }
 }

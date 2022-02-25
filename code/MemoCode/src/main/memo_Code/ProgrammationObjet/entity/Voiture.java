@@ -1,9 +1,6 @@
 package main.memo_Code.ProgrammationObjet.entity;
 
-import main.travail.ProgrammationObjet.entity.Ville;
-
 public class Voiture {
-    // Propriétés
     public static int nbRoues = 4;
 
     private String marque;
@@ -114,10 +111,10 @@ public class Voiture {
 
     public Ville transporter (Passager passager, Ville ville){
         System.out.println("Je transporte un passager qui s'appelle "+ passager.getPrenom() +" " + passager.getPrenom() +
-                " en partant de " +ville.nom);
+                " en partant de " +ville.getNom());
 
         Ville villeArrivee = new Ville();
-        villeArrivee.nom = "Paris";
+        villeArrivee.setNom("Paris");
         return villeArrivee;
     }
 

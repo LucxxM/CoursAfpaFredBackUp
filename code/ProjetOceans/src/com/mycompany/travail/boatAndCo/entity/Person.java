@@ -7,10 +7,8 @@ public class Person {
     public int age;
     public int valeurParDefaut = 45;
     public String dateOfBirth;
-    public Adress adress;
 
     // Méthodes
-
     // Sans valeur de retour et sans parametres
     public void sePresenter() {
         System.out.println("Je m'appelle " + firstname + " " + lastname + " et j'ai " + age + " ans.");
@@ -27,7 +25,6 @@ public class Person {
         return age + nbAnneesAAjouter;
     }
 
-
     // Avec plusieurs parametres
     public int calculerAnciennete(int anneeArrivee, boolean cotisAjour) {
         if (cotisAjour) {
@@ -40,7 +37,6 @@ public class Person {
 
         // return 2022 - anneeArrivee;  // Syntaxe simplifiee
     }
-
 
     // Surcharge
     public void sePresenter(boolean cotisAJour) {
@@ -59,6 +55,4 @@ public class Person {
             System.out.println("Mes cotisations ne sont pas à jour");
         }
     }
-
-
 }
